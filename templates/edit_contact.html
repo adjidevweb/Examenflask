@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Modifier le contact</h2>
+
+<form method="post">
+    <label for="nom">Nom :</label><br>
+    <input type="text" name="nom" value="{{ contact[1] }}" required><br><br>
+
+    <label for="telephone">Téléphone :</label><br>
+    <input type="text" name="telephone" value="{{ contact[2] }}"><br><br>
+
+    <label for="email">Email :</label><br>
+    <input type="email" name="email" value="{{ contact[3] }}"><br><br>
+
+    <button type="submit">Enregistrer</button>
+</form>
+
+<a href="{{ url_for('home') }}">⬅️ Retour</a>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionnaire de Contacts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1> Gestionnaire de Contacts</h1>
+        <nav>
+            <a href="{{ url_for('home') }}">Accueil</a> |
+            <a href="{{ url_for('add_contact') }}">Ajouter</a> |
+            <form action="{{ url_for('search_contact') }}" method="get" style="display:inline;">
+                <input type="text" name="q" placeholder="Rechercher..." value="{{ search if search else '' }}">
+                <button type="submit">🔍</button>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - AitaFALL CDSD3</p>
+    </footer>
+</body>
+</html>
